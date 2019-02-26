@@ -1,0 +1,22 @@
+{
+  "name": "datingwebsite",
+  "version": "1.0.0",
+  "description": "boilerplate",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StefanGerrits2/datingwebsite-bloktech.git"
+  },
+  "author": "Stefan Gerrits",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StefanGerrits2/datingwebsite-bloktech/issues"
+  },
+  "homepage": "https://github.com/StefanGerrits2/datingwebsite-bloktech#readme",
+  "dependencies": {
+    "flickity": "^2.2.0"
+  }
+}
