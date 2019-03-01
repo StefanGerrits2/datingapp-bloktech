@@ -2,9 +2,10 @@
   "name": "datingwebsite",
   "version": "1.0.0",
   "description": "boilerplate",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/StefanGerrits2/datingwebsite-bloktech#readme",
   "dependencies": {
-    "flickity": "^2.2.0"
+    "camelcase": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
