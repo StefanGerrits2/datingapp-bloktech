@@ -29,4 +29,4 @@ npm run start
 
 ## License
 
-MIT © Stefan Gerrits
+[MIT](https://github.com/StefanGerrits2/datingwebsite-bloktech/blob/master/LICENSE.txt) © Stefan Gerrits
