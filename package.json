@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/StefanGerrits2/datingwebsite-bloktech#readme",
   "dependencies": {
-    "camelcase": "^5.0.0"
+    "camelcase": "^5.0.0",
+    "file-type": "^10.8.0",
+    "is-string": "^1.0.4",
+    "sharp": "^0.21.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
