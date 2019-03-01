@@ -12,7 +12,7 @@
     "url": "git+https://github.com/StefanGerrits2/datingwebsite-bloktech.git"
   },
   "author": "Stefan Gerrits",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/StefanGerrits2/datingwebsite-bloktech/issues"
   },

@@ -11,7 +11,7 @@ A feature to upload an image with some text.
 Clone this repository to your computer:
 
 ```
-git clone ...
+git clone https://github.com/StefanGerrits2/datingwebsite-bloktech
 ```
 
 Install all the modules from npm:
