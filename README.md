@@ -14,7 +14,7 @@ Clone this repository to your computer:
 git clone https://github.com/StefanGerrits2/datingwebsite-bloktech
 ```
 
-Install all the modules from npm:
+Install all the packages from npm:
 
 ```
 npm install
