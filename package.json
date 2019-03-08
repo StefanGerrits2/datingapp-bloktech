@@ -19,11 +19,19 @@
   "homepage": "https://github.com/StefanGerrits2/datingwebsite-bloktech#readme",
   "dependencies": {
     "camelcase": "^5.0.0",
+    "express": "^4.16.4",
     "file-type": "^10.8.0",
     "is-string": "^1.0.4",
+    "pug": "^2.0.3",
     "sharp": "^0.21.3"
   },
   "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "nodemon": "^1.18.10"
   }
 }

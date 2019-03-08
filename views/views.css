@@ -1,0 +1,53 @@
+@font-face {
+	font-family: boldd;
+	src: url(./fonts/SourceSansPro-Bold.otf);
+}
+
+@font-face {
+	font-family: regular;
+	src: url(./fonts/SourceSansPro-Regular.otf);
+}
+
+@font-face {
+	font-family: light;
+	src: url(./fonts/SourceSansPro-Light.otf);
+}
+
+body {
+  margin: 0;
+  background-color: #222430;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  font-family: "regular";
+}
+
+li {
+  float: left;
+  margin-left: 0.5em;
+}
+
+ul li:first-child {
+  padding-left: 10em;
+}
+
+li a {
+  display: block;
+  color: #222430;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: lightblue;
+}
+
+form {
+	margin-top: 10em;
+}
