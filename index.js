@@ -51,28 +51,3 @@ app.listen(port, () => console.log(`Datingwebsite listening on port ${port}!`))
 
 
 
-/*
-
-app.set('views', './views')
-app.set('view engine', 'pug')
-
-app.get('/', function (req, res) {
-  res.render('index', { title: 'Hey', message: 'Welcome to my Home page!' })
-})
-
-//Routes
-app.route('/login')
-.get(function(req, res, next) {
-  res.render('index', { title: 'Hey', message: 'Welcome to my login page!' })
-})
-
-app.route('/about')
-.get(function(req, res, next) {
-  res.render('index', { title: 'Hey', message: 'Welcome to the about page!' })
-})
-
-
-//Start Server
-app.listen(port, () => console.log(`Datingwebsite listening on port ${port}!`))
-
-*/
