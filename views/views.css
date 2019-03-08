@@ -1,3 +1,4 @@
+/*fonts*/
 @font-face {
 	font-family: boldd;
 	src: url(./fonts/SourceSansPro-Bold.otf);
@@ -12,12 +13,18 @@
 	font-family: light;
 	src: url(./fonts/SourceSansPro-Light.otf);
 }
-
+/*body*/
 body {
   margin: 0;
   background-color: #222430;
 }
 
+body h1 {
+  color: white;
+  padding-left: 5.8em;
+}
+
+/*nav*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -45,9 +52,18 @@ li a {
 }
 
 li a:hover {
-  background-color: lightblue;
+  background-color: #E2E2E2;
 }
 
-form {
-	margin-top: 10em;
+/*footer*/
+footer {
+  background-color: white;
+  height: 10em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+footer p {
+  padding-left: 10em;
 }
