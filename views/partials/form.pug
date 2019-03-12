@@ -8,19 +8,19 @@ head
       | Kies een club 
       br
       select(name='club')
-        option(value='volvo') TTV Stedebroec
-        option(value='saab') Heemskerk
-        option(value='fiat') Tebunus
-        option(value='audi') Olympia
+        option TTV Stedebroec
+        option Heemskerk
+        option Tebunus
+        option Olympia
       br
     label
       | Hoelang ben je al lid? 
       br
-      input(name='hoelang' placeholder='.. Jaar')
+      input(name='time' placeholder='.. Jaar')
       br
     label
       | Wat vind je zo leuk bij deze club? 
       br
-      input#beschrijving(name='beschrijving' rows='5')
+      input#description(name='description' rows='10')
       br
     button Toevoegen aan profiel
