@@ -1,0 +1,27 @@
+doctype html
+head
+  title Form
+  h1 Voeg een club toe
+  
+  form(action='/' method='post')
+    label
+      | Title
+      br
+      input(name='title')
+      br
+    label
+      | Club naam 
+      br
+      input(name='clubnaam')
+      br
+    label
+      | Hoelang ben je al lid? 
+      br
+      input(name='hoelang')
+      br
+    label
+      | Wat vind je zo leuk bij deze club? 
+      br
+      textarea(name='description' rows='5')
+      br
+    button Voeg club toe
