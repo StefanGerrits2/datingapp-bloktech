@@ -1,7 +1,5 @@
-const camelCase = require('camelcase');
- 
-console.log(camelCase('foo-bar'));
-//=> 'fooBar'
+var slug = require('slug')
+var bodyParser = require('body-parser')
 
 const express = require('express')
 
@@ -17,7 +15,7 @@ app.get('/profiel', profiel)
 app.get('/matches', matches)
 app.get('/inbox', inbox)
 app.get('/zoeken', zoeken)
-
+app.get('/add', form)
 
 function index (req, res) {
 	res.render('index.pug');
@@ -34,6 +32,14 @@ function inbox (req, res) {
 function zoeken (req, res) {
 	res.render('zoeken.pug');
 }
+//form
+function form(req, res) {
+  res.render('add.pug');
+}
+
+
+
+
 
 //404 error
 app.use(function notfound(req, res){

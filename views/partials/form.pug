@@ -5,23 +5,22 @@ head
   
   form(action='/' method='post')
     label
-      | Title
+      | Kies een club 
       br
-      input(name='title')
-      br
-    label
-      | Club naam 
-      br
-      input(name='clubnaam')
+      select(name='club')
+        option(value='volvo') TTV Stedebroec
+        option(value='saab') Heemskerk
+        option(value='fiat') Tebunus
+        option(value='audi') Olympia
       br
     label
       | Hoelang ben je al lid? 
       br
-      input(name='hoelang')
+      input(name='hoelang' placeholder='.. Jaar')
       br
     label
       | Wat vind je zo leuk bij deze club? 
       br
-      textarea(name='description' rows='5')
+      input#beschrijving(name='beschrijving' rows='5')
       br
-    button Voeg club toe
+    button Toevoegen aan profiel

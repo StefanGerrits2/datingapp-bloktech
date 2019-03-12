@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/StefanGerrits2/datingwebsite-bloktech#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "camelcase": "^5.0.0",
     "express": "^4.16.4",
     "file-type": "^10.8.0",
     "is-string": "^1.0.4",
     "pug": "^2.0.3",
-    "sharp": "^0.21.3"
+    "sharp": "^0.21.3",
+    "slug": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^5.15.1",
