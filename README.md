@@ -4,7 +4,7 @@ I use this feature for a datingwebsite to update your profile.
 
 ## Description
 
-A feature to upload an image with some text.
+A feature to add a table tennis club to your profile.
 
 ## Installation
 
