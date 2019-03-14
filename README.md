@@ -27,7 +27,7 @@ Run this command in your terminal to make sure the live-preview loads automatica
 npm run start
 ```
 
-You can check my wiki to see more documentation about my [here.](https://github.com/StefanGerrits2/datingwebsite-bloktech/wiki)
+You can check my wiki to see more documentation about my project [here.](https://github.com/StefanGerrits2/datingwebsite-bloktech/wiki)
 
 ## License
 
