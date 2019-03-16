@@ -7,10 +7,16 @@ var slug = require('slug');
 var bodyParser = require('body-parser');
 
 var find = require('array-find');
-var club;
+
 
 //data
-var data = [];
+var data = [
+  {
+    club: 'Heemskerk',
+    time: '9 Jaar',
+    description: 'Hoi'
+  }
+];
 
 //Routes
 app
@@ -22,9 +28,9 @@ app
   .get('/matches', matches)
   .get('/inbox', inbox)
   .get('/zoeken', zoeken)
-  .get('/add', form)
-  .get('/:id', club)
-  .get('/', clubinformation)
+  .get('/add', form)//Add a club form
+  .get('/:id', club)//Renders data at new page
+  .get('/list', clubinformation)
   .post('/', add)
 
 function index (req, res) {
@@ -42,20 +48,17 @@ function inbox (req, res) {
 function zoeken (req, res) {
 	res.render('zoeken.pug');
 }
+function form(req, res) {
+  res.render('add.pug');
+}
 
 function club(req, res) {
-  var id = req.params.id
-  var doc = '<!doctype html>'
+  var id = req.params.id;
   var club = find(data, function (value) {
-    return value.id === id
+    return value.id === id;
   })
-
-  doc += '<title>' + club.club + ' - My club</title>'
-  doc += '<h1>' + club.club + '</h1>'
-  doc += '<p>' + club.time + '<p>'
-  doc += '<p>' + club.description + '</p>'
-
-  res.send(doc)
+  
+  res.render("list.pug", {post: club});
 }
 
 function clubinformation(req, res) {
@@ -63,21 +66,18 @@ function clubinformation(req, res) {
 }
 
 //form
-function form(req, res) {
-  res.render('add.pug');
-}
-
 function add(req, res) {
   var id = slug(req.body.club).toLowerCase()
 
   data.push({
     id: id,
+    title: req.body.title,
     club: req.body.club,
     time: req.body.time,
     description: req.body.description
   })
 
-  res.redirect('/' + id)
+  res.redirect('/list');
 }
 
 //404 error
@@ -99,5 +99,4 @@ function message(){
   console.log('Datingwebsite listening on port ' + port + ' !')
 }
 
-
-
+console.log(data);

@@ -6,15 +6,12 @@ html
     title Mijn club
     h1 club
     script. 
-    for (var index = 0; index < data.length; index++) {
-        h2
-          a(href='data[index].id') data[index].club
-        p data[index].time
-    
-
+     p #{data}
 
   body
     include partials/header.pug
-    h1= "Mijn club"
+    main
+     h1= "Mijn club"
     
     include partials/footer.pug
+    include tail.pug

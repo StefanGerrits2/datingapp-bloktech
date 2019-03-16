@@ -3,7 +3,6 @@ body h1 {
   font-weight: 700;
   font-style: normal;
   color: white;
-  padding-left: 5.8em;
 }
 
 body {
@@ -93,8 +92,11 @@ select, select option {
   font-style: normal;
 }
 
-select, input, textarea {
+select, input {
   margin-bottom: 2em;
+  -webkit-box-shadow: 10px 10px 17px -2px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 17px -2px rgba(0,0,0,1);
+  box-shadow: 10px 10px 17px -2px rgba(0,0,0,1);
 }
 
 input {
@@ -105,7 +107,6 @@ input {
 /*button om club toe te voegen*/
 #voegtoe {
   text-decoration: none;
-  margin-left: 12em;
   font-size: 1em;
   margin-top: 2em;
   padding: 0.5em 2em;
@@ -117,3 +118,8 @@ input {
   font-weight: 400;
   font-style: normal;
 }
+
+main {
+  margin-left: 12em;
+}
+

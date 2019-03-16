@@ -1,7 +1,8 @@
 doctype html
 head
   title Form
-  h1 Voeg een club toe
+  main
+   h1 Voeg een club toe
   
   form(action='/' method='post')
     label
@@ -14,13 +15,13 @@ head
         option Olympia
       br
     label
-      | Hoelang ben je al lid? 
+      | Hoelang ben je al lid? (in jaren)
       br
-      input(name='time' placeholder='.. Jaar')
+      input(type='number' name='time' placeholder='')
       br
     label
       | Wat vind je zo leuk bij deze club? 
       br
-      input#description(name='description' rows='10')
+      textarea#description(name='description' rows='10')
       br
     button Toevoegen aan profiel
