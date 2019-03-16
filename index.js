@@ -8,10 +8,10 @@ var bodyParser = require('body-parser');
 
 var find = require('array-find');
 
-
 //data
 var data = [
   {
+    title: 'test',
     club: 'Heemskerk',
     time: '9 Jaar',
     description: 'Hoi'
@@ -57,12 +57,12 @@ function club(req, res) {
   var club = find(data, function (value) {
     return value.id === id;
   })
-  
-  res.render("list.pug", {post: club});
+
+  res.render("list.pug", {data: data});
 }
 
 function clubinformation(req, res) {
-  res.render('list.pug', {data: data})
+  res.render('list.pug', {data: club})
 }
 
 //form

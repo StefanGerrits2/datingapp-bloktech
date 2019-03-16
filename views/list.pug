@@ -4,14 +4,14 @@ html
      include views.css
     <link rel="stylesheet" href="https://use.typekit.net/xyh4kkm.css">
     title Mijn club
-    h1 club
-    script. 
-     p #{data}
-
-  body
+  
     include partials/header.pug
     main
      h1= "Mijn club"
-    
+     script. 
+     p Club naam: #{data[0].club}
+     p Aantal jaar lid: #{data[0].time}
+     p Wat vind ik leuk bij deze club: #{data[0].description}
+
     include partials/footer.pug
-    include tail.pug
+    include partials/tail.pug
