@@ -1,6 +1,8 @@
-html
-  head
-    title= "Error 404 Not Found"
+include partials/head.pug
 
-  body
-    h1= "Sorry we could not find this page!"
+title Error 404 Not Found
+
+body
+    include partials/nav.pug
+    h1 Sorry we could not find this page!
+    include partials/footer.pug

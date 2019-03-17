@@ -1,15 +1,15 @@
-html
-  head
-    include partials/styles.pug
-    title Profiel
+include partials/head.pug
+
+title Profiel
     
-  body
-    include partials/header.pug
+body
+    include partials/nav.pug
     main
       h1 Profiel
       a.button(href='/mijnclub') Mijn club 
       br
       br
       a#voegtoe.button(href='/add') Club toevoegen
-    
+
     include partials/footer.pug
+    script(src='static/js/client.js')

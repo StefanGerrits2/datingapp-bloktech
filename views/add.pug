@@ -1,11 +1,12 @@
-html
-  head
-    include partials/styles.pug
-    title= Profiel
+include partials/head.pug
 
-  body
-    include partials/header.pug
+title Profiel
+
+body
+    include partials/nav.pug
     main
-     h1= "Profiel"
-    include partials/form.pug
+      h1 Profiel
+      include partials/form.pug
+
     include partials/footer.pug
+    script(src='static/js/client.js')
