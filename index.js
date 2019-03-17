@@ -9,14 +9,7 @@ var bodyParser = require('body-parser');
 var find = require('array-find');
 
 //data
-var data = [
-  {
-    title: 'test',
-    club: 'Heemskerk',
-    time: '9 Jaar',
-    description: 'Hoi'
-  }
-];
+var data = [];
 
 //Routes
 app
@@ -30,7 +23,6 @@ app
   .get('/zoeken', zoeken)
   .get('/add', form)//Add a club form
   .get('/:id', club)//Renders data at new page
-  .get('/list', clubinformation)
   .post('/', add)
 
 function index (req, res) {
@@ -52,17 +44,20 @@ function form(req, res) {
   res.render('add.pug');
 }
 
-function club(req, res) {
+function club(req, res, next) {
   var id = req.params.id;
   var club = find(data, function (value) {
     return value.id === id;
   })
 
-  res.render("list.pug", {data: data});
-}
+  res.render("myclub.pug", {data: data});
+ 
+  if (!club) {
+    next()
+    return
+  }
 
-function clubinformation(req, res) {
-  res.render('list.pug', {data: club})
+  res.render('myclub.pug', {data: data})
 }
 
 //form
@@ -77,7 +72,7 @@ function add(req, res) {
     description: req.body.description
   })
 
-  res.redirect('/list');
+  res.redirect('/myclub');
 }
 
 //404 error

@@ -1,14 +1,15 @@
 html
   head
-    style
-     include views.css
-    <link rel="stylesheet" href="https://use.typekit.net/xyh4kkm.css">
+    include partials/styles.pug
     title Profiel
     
   body
     include partials/header.pug
     main
       h1 Profiel
-      a#voegtoe(href='/add') Club toevoegen
+      a.button(href='/mijnclub') Mijn club 
+      br
+      br
+      a#voegtoe.button(href='/add') Club toevoegen
     
     include partials/footer.pug

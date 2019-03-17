@@ -1,30 +1,38 @@
-@font-face {
-	font-family: boldd;
-	src: url(../fonts/SourceSansPro-Bold.otf);
-}
-
-@font-face {
-	font-family: regular;
-	src: url(../fonts/SourceSansPro-Regular.otf);
-}
-
-@font-face {
-	font-family: light;
-	src: url(../fonts/SourceSansPro-Light.otf);
+body h1 {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
 }
 
 body {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
   margin: 0;
   background-color: #222430;
 }
 
+/*nav*/
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: white;
-  font-family: "regular";
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+form {
+  color: white;
+  margin-left: 12em;
+}
+
+#description {
+  width: 80%;
+  border: 1px solid #aaaaaa;
 }
 
 li {
@@ -32,7 +40,7 @@ li {
   margin-left: 0.5em;
 }
 
-ul:first-child {
+ul li:first-child {
   padding-left: 10em;
 }
 
@@ -44,11 +52,77 @@ li a {
   text-decoration: none;
 }
 
-
 li a:hover {
-  background-color: lightblue;
+  background-color: #E2E2E2;
 }
 
-form {
-	margin-top: 10em;
+/*footer*/
+footer {
+  background-color: white;
+  height: 7em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+footer p {
+  padding-left: 11em;
+}
+
+button {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+form button {
+  font-size: 1.2em;
+  margin-top: 1em;
+  padding: 0.5em 2em;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #E05635;
+  color: white;
+  border: none;
+}
+
+select, select option {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+select, input {
+  margin-bottom: 2em;
+  -webkit-box-shadow: 10px 10px 17px -2px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 17px -2px rgba(0,0,0,1);
+  box-shadow: 10px 10px 17px -2px rgba(0,0,0,1);
+}
+
+input {
+  padding: 0.5em;
+  border: 1px solid #aaaaaa;
+}
+
+/*button om club toe te voegen*/
+.button {
+  text-decoration: none;
+  font-size: 1em;
+  margin-top: 4em;
+  padding: 0.5em 2em;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #E05635;
+  color: white;
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main {
+  margin-left: 12em;
+}
+
+p {
+  color: white;
 }

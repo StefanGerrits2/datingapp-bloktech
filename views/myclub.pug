@@ -1,8 +1,6 @@
 html
   head
-    style
-     include views.css
-    <link rel="stylesheet" href="https://use.typekit.net/xyh4kkm.css">
+    include partials/styles.pug
     title Mijn club
   
     include partials/header.pug
@@ -12,6 +10,11 @@ html
      p Club naam: #{data[0].club}
      p Aantal jaar lid: #{data[0].time}
      p Wat vind ik leuk bij deze club: #{data[0].description}
+
+     a.button(href="/profile") Naar profiel
+     br
+     br
+     a.button(href="/myclub") Club verwijderen
 
     include partials/footer.pug
     include partials/tail.pug
