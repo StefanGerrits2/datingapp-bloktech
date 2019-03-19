@@ -11,6 +11,7 @@ body {
   font-style: normal;
   margin: 0;
   background-color: #222430;
+  overflow-x: hidden;
 }
 
 /*nav*/
@@ -46,9 +47,9 @@ li a {
   display: block;
   color: #222430;
   text-align: center;
-  padding: 14px 5px;
+  padding: 1em 0.8em;
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 li a:hover {
@@ -78,6 +79,10 @@ select, select option {
   font-style: normal;
 }
 
+select {
+  font-size: 1.1em;
+}
+
 select, input {
   margin-bottom: 2em;
   -webkit-box-shadow: 10px 10px 17px -2px rgba(0,0,0,1);
@@ -88,6 +93,7 @@ select, input {
 input {
   padding: 0.5em;
   border: 1px solid #aaaaaa;
+  width: 5em;
 }
 
 /*button om club toe te voegen*/
@@ -106,11 +112,29 @@ input {
 }
 
 main {
-  margin-left: 2em;
+  margin: 0 auto;
+  width: 85%;
 }
 
 p {
   color: white;
+}
+
+/*profile page*/
+#information {
+  background-color: white;
+  padding: 0.1em 1em 2em 1em;
+  margin: 1em 0em;
+  border-radius: 15px;
+}
+
+#picture img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+article h1 {
+  color: black;
 }
 
 /*footer*/
@@ -118,8 +142,9 @@ footer {
   background-color: white;
   height: 7em;
   width: 100%;
-  position: fixed;
+  position: relative;
   bottom: 0;
+  margin-top: 3em;
 }
 
 footer p {
@@ -147,6 +172,15 @@ footer p {
     padding: 14px 16px;
     font-size: 1em;
   }
+  #picture img {
+    border-radius: 50%;
+    width: 20em;
+    height: 20em;
+  }
+  #information {
+    width: 20em;
+    padding-left: 2em;
+  }
 }
 
 @media(min-width:960px) {
@@ -161,5 +195,13 @@ footer p {
   }
   li a {
     padding: 14px 16px;
+  }
+  #container {
+    display: flex;
+    width: 100%;
+  }
+  #information {
+    margin: 0em 0em 0em 8em;
+    width: 50%;
   }
 }

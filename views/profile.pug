@@ -1,15 +1,20 @@
 include partials/head.pug
 
-title Profiel
+title Mijn profiel
     
 body
     include partials/nav.pug
     main
-      h1 Profiel
-      a.button(href='/mijnclub') Mijn club 
-      br
-      br
-      a#voegtoe.button(href='/add') Club toevoegen
+      h1 Denise de Jong
+      div#container
+        div#picture 
+          img(src="../static/images/woman.png", alt="")
+        article#information
+          h1 Over mij
+          a.button(href='/mijnclub') Mijn club 
+          br
+          br
+          a#voegtoe.button(href='/add') Club toevoegen
 
     include partials/footer.pug
     script(src='static/js/client.js')
