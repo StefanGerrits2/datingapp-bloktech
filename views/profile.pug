@@ -8,13 +8,22 @@ body
       h1 Denise de Jong
       div#container
         div#picture 
-          img(src="../static/images/woman.png", alt="")
+          img(src="../static/images/woman.png", alt="Profielfoto")
         article#information
           h1 Over mij
           a.button(href='/mijnclub') Mijn club 
           br
           br
           a#voegtoe.button(href='/add') Club toevoegen
+      p#amount 6 foto's
+      div#pictures
+        img(src="../static/images/woman.png", alt="Foto over mij")
+        img(src="../static/images/woman.png", alt="Foto over mij")
+        img(src="../static/images/woman.png", alt="Foto over mij")
+        img(src="../static/images/woman.png", alt="Foto over mij")
+        img(src="../static/images/woman.png", alt="Foto over mij")
+        img(src="../static/images/woman.png", alt="Foto over mij")
+        
 
     include partials/footer.pug
     script(src='static/js/client.js')
