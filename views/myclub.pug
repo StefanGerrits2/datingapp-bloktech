@@ -10,11 +10,10 @@ body
       p Club: #{data[0].club}
       p Aantal jaar lid: #{data[0].time}
       p Wat vind ik leuk bij deze club: #{data[0].description}
-      a.button(href="/profile") Naar profiel
+      a.button(href='/profile') Naar profiel
       br
       br
-      a.button(href="/profile") Club verwijderen
+      a.button(href='/profile') Club verwijderen
 
     include partials/footer.pug
-    include partials/tail.pug
-    script(src='static/js/client.js')
+    script(src='../static/js/client.js')

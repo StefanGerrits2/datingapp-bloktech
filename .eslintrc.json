@@ -1,0 +1,14 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": "error",
+        "quotes": ["error", "single"],
+        "no-mixed-spaces-and-tabs": [2, "smart-tabs"]
+    }
+}

@@ -20,10 +20,10 @@ app
   .get('/profile', profile)
   .get('/matches', matches)
   .get('/inbox', inbox)
-  .get('/zoeken', zoeken)
+  .get('/search', search)
   .get('/add', form)//Add a club form
   .get('/:id', club)//Renders data at new page
-  .post('/', add)
+  .post('/', add);
 
 function index (req, res) {
 	res.render('index.pug');
@@ -37,8 +37,8 @@ function matches (req, res) {
 function inbox (req, res) {
 	res.render('inbox.pug');
 }
-function zoeken (req, res) {
-	res.render('zoeken.pug');
+function search (req, res) {
+	res.render('search.pug');
 }
 function form(req, res) {
   res.render('add.pug');
@@ -48,21 +48,21 @@ function club(req, res, next) {
   var id = req.params.id;
   var club = find(data, function (value) {
     return value.id === id;
-  })
+  });
 
-  res.render("myclub.pug", {data: data});
- 
+  res.render('myclub.pug', {data: data});
+
   if (!club) {
-    next()
-    return
+    next();
+    return;
   }
 
-  res.render('myclub.pug', {data: data})
+  res.render('myclub.pug', {data: data});
 }
 
 //form
 function add(req, res) {
-  var id = slug(req.body.club).toLowerCase()
+  var id = slug(req.body.club).toLowerCase();
 
   data.push({
     id: id,
@@ -70,7 +70,7 @@ function add(req, res) {
     club: req.body.club,
     time: req.body.time,
     description: req.body.description
-  })
+  });
 
   res.redirect('/myclub');
 }
@@ -84,14 +84,13 @@ app.use(function notfound(req, res){
     res.render('notfound.pug');
     return;
   }
-
 });
 
 //Confirm message
-app.listen(port, message())
+app.listen(port, message());
 
 function message(){
-  console.log('Datingwebsite listening on port ' + port + ' !')
+  console.log('Datingwebsite listening on port ' + port + ' !');
 }
 
-console.log(data);
+
