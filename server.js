@@ -8,12 +8,12 @@ var bodyParser = require('body-parser');
 
 var find = require('array-find');
 
-//data
+// Data
 var data = [];
 
-//Routes
+// Routes
 app
-  .set('view engine', 'pug') //middleware at the top so it knows which template will be used
+  .set('view engine', 'pug') // Middleware at the top so it knows which template will be used
   .use(bodyParser.urlencoded({extended: true}))
   .use('/static', express.static('static'))
   .get('/', index)
@@ -21,8 +21,8 @@ app
   .get('/matches', matches)
   .get('/inbox', inbox)
   .get('/search', search)
-  .get('/add', form)//Add a club form
-  .get('/:id', club)//Renders data at new page
+  .get('/add', form) // Add a club form
+  .get('/:id', club) // Renders data at new page
   .post('/', add);
 
 function index (req, res) {
@@ -32,7 +32,7 @@ function profile (req, res) {
 	res.render('profile.pug');
 }
 function matches (req, res) {
-	res.render('matches.pug');
+  res.render('matches.pug');
 }
 function inbox (req, res) {
 	res.render('inbox.pug');
@@ -60,7 +60,7 @@ function club(req, res, next) {
   res.render('myclub.pug', {data: data});
 }
 
-//form
+// Form
 function add(req, res) {
   var id = slug(req.body.club).toLowerCase();
 
@@ -75,22 +75,23 @@ function add(req, res) {
   res.redirect('/myclub');
 }
 
-//404 error
+// 404 error
 app.use(function notfound(req, res){
   res.status(404);
 
-  // respond with html page
+  // Respond with html page
   if (req.accepts('html')) {
     res.render('notfound.pug');
     return;
   }
 });
 
-//Confirm message
+// Confirm message
 app.listen(port, message());
 
 function message(){
   console.log('Datingwebsite listening on port ' + port + ' !');
 }
+
 
 

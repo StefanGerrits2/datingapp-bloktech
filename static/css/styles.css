@@ -141,13 +141,12 @@ p {
 }
 
 #pictures {
-  margin-top: 5em;
+  margin-top: 10em;
   display: grid;
-  grid-template-columns: 100%;
+  grid-gap: 2em;
 }
 
 #pictures img {
-  margin-top: 6em;
   width: 100%;
 }
 
@@ -200,12 +199,10 @@ footer p {
     padding-left: 2em;
   }
   #pictures {
-    margin-top: 5em;
-    grid-template-columns: 40% 40%;
-    
+    grid-template-columns: 1fr 1fr;
   }
   #pictures img {
-    margin-right: 5em;
+    margin-right: 20%;
   }
 }
 
@@ -234,7 +231,7 @@ footer p {
     width: 100%;
   }
   #pictures {
-    margin-top: 5em;
+    margin-top: 10em;
     grid-template-columns: 25% 25% 25%;
   }
   #pictures img {
