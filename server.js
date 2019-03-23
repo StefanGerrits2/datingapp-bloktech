@@ -21,9 +21,6 @@ mongo.MongoClient.connect(url, function (err, client) {
 });
 
 
-// Data
-var data = [];
-
 // Routes
 app
   .set('view engine', 'pug') // Middleware at the top so it knows which template will be used
@@ -59,23 +56,23 @@ function form(req, res) {
 
 function club(req, res, next) {
   var id = req.params.id;
-  var club = find(data, function (value) {
-    return value.id === id;
-  });
 
-  res.render('myclub.pug', {data: data});
+  db.collection('clubs').findOne({
+    _id: mongo.ObjectID(id)
+  }, done);
 
-  if (!club) {
-    next();
-    return;
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.render('myclub.pug', {data: data});
+    }
   }
-
-  res.render('myclub.pug', {data: data});
 }
 
 // Form
 function add(req, res, next) {
-  db.collection('club').insertOne({
+  db.collection('clubs').insertOne({
     club: req.body.club,
     time: req.body.time,
     description: req.body.description
