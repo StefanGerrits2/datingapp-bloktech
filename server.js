@@ -8,6 +8,19 @@ var bodyParser = require('body-parser');
 
 var find = require('array-find');
 
+var mongo = require('mongodb');
+
+require('dotenv').config();
+
+var db = null;
+var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
+
+mongo.MongoClient.connect(url, function (err, client) {
+  if (err) throw err;
+  db = client.db(process.env.DB_NAME);
+});
+
+
 // Data
 var data = [];
 
@@ -61,18 +74,20 @@ function club(req, res, next) {
 }
 
 // Form
-function add(req, res) {
-  var id = slug(req.body.club).toLowerCase();
-
-  data.push({
-    id: id,
-    title: req.body.title,
+function add(req, res, next) {
+  db.collection('club').insertOne({
     club: req.body.club,
     time: req.body.time,
     description: req.body.description
-  });
+  }, done);
 
-  res.redirect('/myclub');
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.redirect('/myclub' + data.insertedId);
+    }
+  }
 }
 
 // 404 error
