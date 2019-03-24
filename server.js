@@ -82,7 +82,7 @@ function add(req, res, next) {
     if (err) {
       next(err);
     } else {
-      res.redirect('/myclub' + data.insertedId);
+      res.redirect('/' + data.insertedId);
     }
   }
 }
