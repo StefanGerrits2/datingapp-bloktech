@@ -1,0 +1,20 @@
+include partials/head.pug
+
+body
+include partials/nav.pug
+main
+  h1 Inloggen
+  div#login
+    form(action='/home' method='post')
+     label
+       | Gebruikersnaam
+       br
+       input(type='text' name='username' placeholder='')
+       br
+     label
+       | Wachtwoord
+       br
+       input(type='password' name='password' placeholder='') 
+       br
+     button#inloggen.button Inloggen
+    

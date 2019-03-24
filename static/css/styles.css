@@ -155,6 +155,27 @@ p {
   margin-bottom: -10em;
 }
 
+/*login*/
+#login {
+  border: 1px solid black;
+  background-color: white;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+input {
+  width: 80%;
+}
+
+#inloggen {
+  border: none;
+  margin-top: 1em;
+}
+
+div form label {
+  color: black;
+}
+
 /*footer*/
 footer {
   background-color: white;
@@ -203,6 +224,9 @@ footer p {
   }
   #pictures img {
     margin-right: 20%;
+  }
+  #login {
+    width: 30em;
   }
 }
 
