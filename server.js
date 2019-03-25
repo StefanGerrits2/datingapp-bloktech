@@ -27,17 +27,19 @@ app
   .use(bodyParser.urlencoded({extended: true}))
   .use('/static', express.static('static'))
   .get('/', login)
-  .get('/home', index)
-  .get('/profile', profile)
-  .get('/matches', matches)
-  .get('/inbox', inbox)
-  .get('/search', search)
+  .get('/home', index) // Home page
+  .get('/profile', profile) // Profile page
+  .get('/matches', matches) // Matches page
+  .get('/inbox', inbox) // Inbox page
+  .get('/search', search) // Search page
   .get('/add', form) // Add a club form
+  .get('/myclub', add) // Add a club form
   .get('/:id', club) // Renders data at new page
-  .post('/home', loggingin)
-  .post('/', add)
+  .post('/home', loggingin) // Login
+  .post('/', add) 
   .delete('/:id', remove);
 
+ 
 function index (req, res) {
   res.render('index.pug');
 }

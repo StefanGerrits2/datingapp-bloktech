@@ -6,14 +6,14 @@ body
     include partials/nav.pug
     main
       h1 Mijn club
-      script. 
-      p Club: #{data.club}
-      p Aantal jaar lid: #{data.time}
-      p Wat vind ik leuk bij deze club: #{data.description}
-      a.button(href='/profile') Naar profiel
-      br
-      br
-      a.button(href='/profile') Club verwijderen
+      block content
+        p Club: #{data.club}
+        p Aantal jaar lid: #{data.time}
+        p Wat vind ik leuk bij deze club: #{data.description}
+        a.button(href='/profile') Naar profiel
+        br
+        br
+        a.button#js-remove(href="/profile", data-id=data._id) Verwijderen
 
     include partials/footer.pug
     script(src='../static/js/client.js')
