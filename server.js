@@ -40,7 +40,7 @@ app
   .get('/logout', logout) // Log out
   .get('/add', form) // Add a club form
   .get('/:id', club) // Renders data at new page
-  .post('/home', loggingin) // Login, or not
+  .post('/home', checkLogin) // Login, or not
   .post('/', add) 
   .delete('/:id', remove);
   
@@ -63,35 +63,37 @@ function form(req, res) {
   res.render('add.pug');
 }
 
-// Login
-function loggingin(req, res, next) {
-  db.collection('profiles').insertOne({
-    username: req.body.username,
-    password: req.body.password
+// Check login
+function checkLogin(req, res) {
+  var username = req.body.username;
+  var password = req.body.password;
+  db.collection('profiles').findOne({
+    username: username,
+    password: password
   }, done);
 
-  function done(err, data) {
-    if (req.body.username) {
-      res.render('index.pug', {data: data});
-      res.end();
+  function done(err, profile) {
+    if(err) {
+      res.json(err);
+    }
+    if (profile.username === req.body.username && profile.password === req.body.password){
+      req.session.profileId= profile._id;
+      res.render('index.pug', {
+        id: profile._id,
+        username: profile.username
+      });
     }
     else {
-      res.status(401).send('Vul alstublieft uw gegevens in');
-  
+      res.status(401).send('Password incorrect');
     }
   }
 }
 
-// Check data from login, Used source: https://www.youtube.com/watch?v=aT98NMdAXyk
 function login (req, res) {
-	if (req.session.username) {
-    res.redirect('/logged');
-  }
-  else {
-    res.render('login.pug');
-  }
+  res.render('login.pug');
 }
 
+// Used source: https://www.youtube.com/watch?v=aT98NMdAXyk
 function logout(req, res) {
   req.session.destroy(function(err){
     if (err) {

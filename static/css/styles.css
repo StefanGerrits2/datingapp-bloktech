@@ -126,7 +126,7 @@ main {
   max-width: 80%;
 }
 
-p {
+p, h2 {
   color: white;
 }
 
