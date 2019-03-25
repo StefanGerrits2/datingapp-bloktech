@@ -19,7 +19,7 @@ function onremove(ev) {
   }
 
   function onload() {
-    window.location = '/';
+    window.location = '/profile';
   }
 
   function onfail() {

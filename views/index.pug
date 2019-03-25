@@ -6,6 +6,15 @@ body
     include partials/nav.pug
     main
       h1 Home
-     
+      block content
+        p Welkom  #{data.username}
+        if (data.username) 
+        a.button(href='/logout') Uitloggen
+      
+        
+        
+      
+
+        
+
     include partials/footer.pug
-    script(src='../static/js/client.js')
