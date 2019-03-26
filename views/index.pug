@@ -6,15 +6,12 @@ body
     include partials/nav.pug
     main
       h1 Home
-      block content
-        h2 Welkom #{username}!
-        a.button(href='/logout') Uitloggen 
-        
-        
-        
-        
+      if username
+        h2 Welkom #{username}
+        a.button(href='/logout') Uitloggen
+      else
+        h2 Je bent nog niet ingelogd
+        a.button(href='/') Inloggen
+
       
-
-        
-
     include partials/footer.pug

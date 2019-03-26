@@ -19,7 +19,7 @@ function onremove(ev) {
   }
 
   function onload() {
-    window.location = '/profile';
+    window.location = '/myclub';
   }
 
   function onfail() {
