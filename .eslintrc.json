@@ -10,7 +10,7 @@
     "rules": {
         "semi": "error",
         "quotes": ["error", "single"],
-        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+        "indent": ["error", 2],
         "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
         "comma-style": ["error", "last"],
         "comma-spacing": ["error", { "before": false, "after": true }]

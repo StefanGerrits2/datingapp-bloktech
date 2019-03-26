@@ -29,7 +29,7 @@ app
     resave: false,
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET
-   }))
+  }))
   .get('/', login)
   .get('/home', home) // Home page
   .get('/profile', profile) // Profile page
@@ -58,7 +58,7 @@ function checkLogin(req, res) {
     password: password
   }, done);
 
-  function done(err, user) {
+  function done(err) {
     if(err) {
       res.json(err);
     }
@@ -100,7 +100,7 @@ function profile (req, res) {
     res.status(401).send('U moet ingelogd zijn om deze pagina te kunnen zien');
   }
   else {
-  res.render('profile.pug');
+    res.render('profile.pug');
   }
 }
 
@@ -110,11 +110,11 @@ function matches (req, res) {
 }
 
 function inbox (req, res) {
-	res.render('inbox.pug');
+  res.render('inbox.pug');
 }
 
 function search (req, res) {
-	res.render('search.pug');
+  res.render('search.pug');
 }
 
 function form(req, res) {
@@ -193,6 +193,3 @@ app.listen(port, message());
 function message(){
   console.log('Datingwebsite listening on port ' + port + ' !');
 }
-
-
-
