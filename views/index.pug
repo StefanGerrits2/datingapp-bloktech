@@ -2,16 +2,17 @@ include partials/head.pug
 
 title Home
 
-body
+body.background
     include partials/nav.pug
     main
-      h1 Home
-      if username
-        h2 Welkom #{username}
-        a.button(href='/logout') Uitloggen
-      else
-        h2 Je bent nog niet ingelogd
-        a.button(href='/') Inloggen
+      h1.home Home
+      div.userstatus
+        if username
+          h2 Welkom #{username}
+          a.button(href='/logout') Uitloggen
+        else
+          h2 Je bent nog niet ingelogd
+          a.button(href='/') Inloggen
 
       
     include partials/footer.pug

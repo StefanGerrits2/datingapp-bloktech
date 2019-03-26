@@ -44,66 +44,16 @@ app
   .post('/', add) 
   .delete('/:id', remove);
 
-// Render login page
-function login (req, res) {
-  res.render('login.pug');
-}
-
-// Check login
-function checkLogin(req, res) {
-  var username = req.body.username;
-  var password = req.body.password;
-  db.collection('profiles').findOne({
-    username: username,
-    password: password
-  }, done);
-
-  function done(err) {
-    if(err) {
-      res.json(err);
-    }
-    if (user){
-      req.session.user = user;
-      console.log(user);
-      res.render('index.pug', {
-        id: user._id,
-        username: user.username
-      });
-    }
-    else {
-      res.status(401).send('Uw inloggegevens kloppen niet! Probeer het opnieuw.');
-    }
-  }
-}
-
-// Log out, used source: https://www.youtube.com/watch?v=aT98NMdAXyk
-function logout(req, res) {
-  req.session.destroy(function(err){
-    if (err) {
-      res.negotiate(err);
-    }
-    else {
-      res.redirect('/');
-    }
-  });
-}
-// Source used ends here
-
-// Render home page
-function home (req, res) {
-  res.render('index.pug');
-}
-
 // Render profile if logged in
 function profile (req, res) {
   if(!req.session.user) {
-    res.status(401).send('U moet ingelogd zijn om deze pagina te kunnen zien');
+    res.status(401).send('U moet ingelogd zijn om deze pagina te kunnen zien.');
   }
   else {
     res.render('profile.pug');
   }
 }
-
+  
 // Empty routes
 function matches (req, res) {
   res.render('matches.pug');
@@ -125,21 +75,54 @@ function myclub(req, res, data) {
   res.render('myclub.pug', {data: data});
 }
 
-// Add input to database
-function add(req, res, next) {
-  db.collection('clubs').insertOne({
-    club: req.body.club,
-    time: req.body.time,
-    description: req.body.description
+// Check login
+function checkLogin(req, res) {
+  var username = req.body.username;
+  var password = req.body.password;
+  db.collection('profiles').findOne({
+    username: username,
+    password: password
   }, done);
 
-  function done(err, data) {
-    if (err) {
-      next(err);
-    } else {
-      res.redirect('/' + data.insertedId);
+  function done(err, user) {
+    if(err) {
+      res.json(err);
+    }
+    if (user){
+      req.session.user = user;
+      console.log(user);
+      res.render('index.pug', {
+        id: user._id,
+        username: user.username
+      });
+    }
+    else {
+      res.status(401).send('Uw inloggegevens kloppen niet! Probeer het opnieuw.');
     }
   }
+}
+
+// Render login page
+function login (req, res) {
+  res.render('login.pug');
+}
+
+// Log out, used source: https://www.youtube.com/watch?v=aT98NMdAXyk
+function logout(req, res) {
+  req.session.destroy(function(err){
+    if (err) {
+      res.negotiate(err);
+    }
+    else {
+      res.redirect('/');
+    }
+  });
+}
+// Source used ends here
+
+// Render home page
+function home (req, res) {
+  res.render('index.pug');
 }
 
 // Render club data
@@ -155,6 +138,23 @@ function club(req, res, next) {
       next(err);
     } else {
       res.render('myclub.pug', {data: data});
+    }
+  }
+}
+
+// Add input to database
+function add(req, res, next) {
+  db.collection('clubs').insertOne({
+    club: req.body.club,
+    time: req.body.time,
+    description: req.body.description
+  }, done);
+
+  function done(err, data) {
+    if (err) {
+      next(err);
+    } else {
+      res.redirect('/' + data.insertedId);
     }
   }
 }

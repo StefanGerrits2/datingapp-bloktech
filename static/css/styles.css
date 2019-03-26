@@ -1,7 +1,10 @@
-body h1 {
-  font-family: source-sans-pro, sans-serif;
-  font-weight: 700;
-  font-style: normal;
+/* General CSS */
+main {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+p, h2 {
   color: white;
 }
 
@@ -14,7 +17,34 @@ body {
   overflow-x: hidden;
 }
 
-/*nav*/
+body h1 {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+}
+
+.background {
+  background-image: url('../static/images/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.userstatus {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 1em;
+  padding: 0.1em 0em 1em 2em;
+  height: 7em;
+}
+
+.userstatus h2 {
+  color: black;
+}
+
+
+/* Navigation */
 ul {
   list-style-type: none;
   margin: 0;
@@ -28,11 +58,6 @@ ul {
 
 form {
   color: white;
-}
-
-#description {
-  width: 80%;
-  border: 1px solid #aaaaaa;
 }
 
 li {
@@ -52,63 +77,11 @@ li a {
   font-size: 1em;
 }
 
-li a:hover {
+li a:hover, li a:focus {
   background-color: #E2E2E2;
 }
 
-button, .button {
-  font-family: source-sans-pro, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  -webkit-transition-duration: 0.4s; 
-  transition-duration: 0.4s;
-
-}
-
-button:hover, .button:hover {
-  background-color: #C22B07;
-}
-
-form button {
-  font-size: 1.2em;
-  margin-top: 1em;
-  padding: 0.5em 2em;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: #E05635;
-  color: white;
-  border: none;
-}
-
-select, select option {
-  font-family: source-sans-pro, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-select {
-  font-size: 1.1em;
-  padding: 0.2em;
-}
-
-select, input, textarea {
-  margin-bottom: 2em;
-  -webkit-box-shadow: 5px 10px 17px -2px rgba(0,0,0,1);
-  -moz-box-shadow: 5px 10px 17px -2px rgba(0,0,0,1);
-  box-shadow: 5px 10px 17px -2px rgba(0,0,0,1);
-}
-
-select:focus, input:focus, textarea:focus {
-  background-color: #cecece;
-}
-
-input, textarea {
-  padding: 0.5em;
-  border: 1px solid black;
-  width: 5em;
-}
-
-/*button om club toe te voegen*/
+/* Buttons */
 .button {
   text-decoration: none;
   font-size: 1em;
@@ -123,18 +96,67 @@ input, textarea {
   font-style: normal;
 }
 
-main {
-  margin: 0 auto;
-  max-width: 80%;
+button, .button {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
 }
 
-p, h2 {
+button:hover, .button:hover, button:focus, .button:focus  {
+  background-color: #C22B07;
+}
+
+form button {
+  font-size: 1.2em;
+  margin-top: 1em;
+  padding: 0.5em 2em;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #E05635;
   color: white;
+  border: none;
 }
 
-/*profile page*/
+/* Form */
+select, select option {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+select {
+  font-size: 1.1em;
+  padding: 0.2em;
+}
+
+#description {
+  width: 80%;
+  border: 1px solid #aaaaaa;
+}
+
+select, input, textarea {
+  margin-bottom: 2em;
+  -webkit-box-shadow: 5px 15px 17px -2px rgba(0,0,0,1);
+  -moz-box-shadow: 5px 15px 17px -2px rgba(0,0,0,1);
+  box-shadow: 5px 10px 20px -2px rgba(0,0,0,1);
+}
+
+select:focus, input:focus, textarea:focus {
+  background-color: #cecece;
+}
+
+input, textarea {
+  padding: 0.5em;
+  border: none;
+  width: 5em;
+}
+
+/* Profile page */
+
 #information {
-  background-color: #181B23;
+  background-color: white;
   padding: 0.1em 1em 2em 1em;
   margin: 1em 0em;
   border-radius: 15px;
@@ -142,6 +164,10 @@ p, h2 {
   -webkit-box-shadow: 14px 14px 10px -9px rgba(0,0,0,0.46);
   -moz-box-shadow: 14px 14px 10px -9px rgba(0,0,0,0.46);
   box-shadow: 14px 14px 10px -9px rgba(0,0,0,0.46);
+}
+
+#information h1 {
+  color: black;
 }
 
 #picture img {
@@ -153,9 +179,9 @@ p, h2 {
 }
 
 #pictures {
-  margin-top: 10em;
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 3em;
+  margin-bottom: 7em;
 }
 
 #pictures img {
@@ -164,12 +190,12 @@ p, h2 {
 
 #amount {
   margin-top: 4em;
-  margin-bottom: -10em;
 }
 
-/*login*/
+/* Login page */
 #login {
   border: 1px solid black;
+  border-radius: 15px;
   background-color: white;
   margin-top: 2em;
   padding: 1em 2em;
@@ -188,7 +214,7 @@ div form input {
   width: 90%;;
 }
 
-/*footer*/
+/* Footer */
 footer {
   background-color: white;
   height: 7em;
@@ -208,7 +234,13 @@ footer p {
   margin-bottom: 3em;
 }
 
-/*mediaqueries*/
+.background footer {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1em;
+}
+
+/* Mediaqueries */
 @media(min-width:600px) {
   main {
     margin-left: 6em;
@@ -228,17 +260,18 @@ footer p {
     width: 50%;
   }
   #information {
-    width: 100%;
+    width: 90%;
     padding-left: 2em;
+    margin-right: 6em;
   }
   #pictures {
     grid-template-columns: 1fr 1fr;
   }
-  #pictures img {
-    margin-right: 20%;
-  }
   #login {
-    width: 30em;
+    width: 70%;
+  }
+  .userstatus {
+    width: 20em;
   }
 }
 
@@ -263,14 +296,18 @@ footer p {
     width: 100%;
   }
   #information {
-    margin: 0em 0em 0em 8em;
-    width: 100%;
+    margin: 0em 5em 0em 8em;
+    width: 90%;
   }
   #pictures {
-    margin-top: 10em;
     grid-template-columns: 25% 25% 25%;
+    grid-gap: 7em;
+    margin-right: 5em;
   }
   #pictures img {
     margin-right: 5em;
+  }
+  #login {
+    width: 30em;
   }
 }
