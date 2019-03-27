@@ -1,4 +1,4 @@
 {
     "version": 2,
-    "routes": [{ "src": "/", "dest": "views/login.pug" }]
+    "routes": [{ "src": "/", "dest": "server.js" }]
   }
