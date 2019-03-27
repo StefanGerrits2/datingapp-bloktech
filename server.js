@@ -21,6 +21,7 @@ mongo.MongoClient.connect(url, function (err, client) {
 // Routes
 app
   .set('view engine', 'pug') // Middleware at the top so it knows which template will be used
+  .use(ignoreFavicon) // Source: https://stackoverflow.com/questions/35408729/express-js-prevent-get-favicon-ico
   .use(bodyParser.urlencoded({extended: true}))
   .use('/static', express.static('static'))
   .use(session({
@@ -173,6 +174,15 @@ function remove(req, res, next) {
     }
   }
 } // Used source ends here
+
+// Ignore favicon, Source: https://stackoverflow.com/questions/35408729/express-js-prevent-get-favicon-ico
+function ignoreFavicon(req, res, next) {
+  if (req.originalUrl === '/favicon.ico') {
+    res.status(204).json({nope: true});
+  } else {
+    next();
+  }
+}
 
 // 404 error
 app.use(function notfound(req, res){
