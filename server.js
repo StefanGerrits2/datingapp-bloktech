@@ -41,16 +41,6 @@ app
   .post('/home', checkLogin) // Login, or not
   .post('/', add) 
   .delete('/:id', remove);
-
-// Render profile if logged in
-function profile (req, res) {
-  if(!req.session.user) {
-    res.status(401).send('U moet ingelogd zijn om deze pagina te kunnen zien.');
-  }
-  else {
-    res.render('profile.pug');
-  }
-}
   
 // Empty routes
 function matches (req, res) {
@@ -71,6 +61,11 @@ function form(req, res) {
 
 function myclub(req, res, data) {
   res.render('myclub.pug', {data: data});
+}
+
+// Render login page
+function login (req, res) {
+  res.render('login.pug');
 }
 
 // Check login
@@ -100,9 +95,19 @@ function checkLogin(req, res) {
   }
 }
 
-// Render login page
-function login (req, res) {
-  res.render('login.pug');
+// Render home page
+function home (req, res) {
+  res.render('index.pug');
+}
+
+// Render profile if logged in
+function profile (req, res) {
+  if(!req.session.user) {
+    res.status(401).send('U moet ingelogd zijn om deze pagina te kunnen zien.');
+  }
+  else {
+    res.render('profile.pug');
+  }
 }
 
 // Log out, used source: https://www.youtube.com/watch?v=aT98NMdAXyk
@@ -117,11 +122,6 @@ function logout(req, res) {
   });
 }
 // Source used ends here
-
-// Render home page
-function home (req, res) {
-  res.render('index.pug');
-}
 
 // Render club data
 function club(req, res, next) {
