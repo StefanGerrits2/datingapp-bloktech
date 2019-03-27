@@ -3,9 +3,7 @@ const port = 3000;
 const express = require('express');
 const app = express();
 
-var slug = require('slug');
 var bodyParser = require('body-parser');
-var find = require('array-find');
 var mongo = require('mongodb');
 var session = require('express-session');
 
@@ -142,7 +140,7 @@ function club(req, res, next) {
   }
 }
 
-// Add input to database
+// Add input to database, used source: https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js
 function add(req, res, next) {
   db.collection('clubs').insertOne({
     club: req.body.club,
@@ -174,7 +172,7 @@ function remove(req, res, next) {
       res.json({status: 'ok'});
     }
   }
-}
+} // Used source ends here
 
 // 404 error
 app.use(function notfound(req, res){

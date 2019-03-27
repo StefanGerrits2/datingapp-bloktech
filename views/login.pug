@@ -1,5 +1,7 @@
 include partials/head.pug
 
+title Login
+
 body
 include partials/nav.pug
 main
@@ -9,12 +11,12 @@ main
      label
        | Gebruikersnaam
        br
-       input(type='text' name='username' placeholder='')
+       input(type='text' name='username')
        br
      label
        | Wachtwoord
        br
-       input(type='password' name='password' placeholder='') 
+       input(type='password' name='password') 
        br
      button#inloggen.button Inloggen
      script(src='../static/js/client.js')
