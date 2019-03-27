@@ -13,7 +13,7 @@ require('dotenv').config();
 var db = null;
 var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT;
 
-mongo.MongoClient.connect(url, function (err, client) {
+mongo.MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
   if (err) throw err;
   db = client.db(process.env.DB_NAME);
 });
