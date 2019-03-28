@@ -61,7 +61,7 @@ You can change the port on the second code line in the *server.js* file. When yo
 
 #### 6. Usage
 
-There are 2 account you can login with:
+There are 2 accounts you can login with:
 
 1. Username: `Stefan`
 Password: `Stefan`
