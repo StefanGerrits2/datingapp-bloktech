@@ -22,25 +22,29 @@ To see which sources I used, click [here.](https://github.com/StefanGerrits2/dat
 
 ## Installation
 
-#### 1. Clone this repository to your computer:
+#### 1. Clone this repository to your computer
+Run this command in your terminal:
 
 ```
 git clone https://github.com/StefanGerrits2/datingwebsite-bloktech
 ```
 
-#### 2. Navigate into the route of the folder:
+#### 2. Navigate into the route of the folder
+Run this command in your terminal:
 
 ```
 cd datingwebsite-bloktech
 ```
 
-#### 3. Run this command in your terminal to install all depedencies:
+#### 3. Install all depedencies
+Run this command in your terminal:
 
 ```
 npm install
 ```
 
-#### 4. Run this command in your terminal to run the server.
+#### 4. Run the server
+Run this command in your terminal:
 
 ```
 npm run start
@@ -48,7 +52,8 @@ npm run start
 
 NOTE: Make sure you are still located in the root of the `datingwebsite-bloktech` folder when running this command.
 
-#### 5. Open your browser and go to:
+#### 5. Viewing the website
+Open your browser and go to:
 
 `localhost:3000`
 
