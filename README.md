@@ -1,5 +1,7 @@
 # Ping Pong Partners 
 
+![](http://i66.tinypic.com/2i77rr8.jpg)
+
 ## Description
 
 This is a website to meet table tennis players. You are able to login and add a table tennis club to your profile.
