@@ -18,6 +18,14 @@ mongo.MongoClient.connect(url, { useNewUrlParser: true }, function (err, client)
   db = client.db(process.env.DB_NAME);
 });
 
+// Require controllers
+const checkLogin = require('./controllers/checkLogin.js');
+const profile = require('./controllers/profile.js');
+const logout = require('./controllers/logout.js');
+const club = require('./controllers/club.js');
+const add = require('./controllers/add.js');
+const remove = require('./controllers/remove.js');
+
 // Routes
 app
   .set('view engine', 'pug') // Middleware at the top so it knows which template will be used
@@ -69,111 +77,10 @@ function login (req, res) {
   res.render('login.pug');
 }
 
-// Check login
-function checkLogin(req, res) {
-  var username = req.body.username;
-  var password = req.body.password;
-  db.collection('profiles').findOne({
-    username: username,
-    password: password
-  }, done);
-
-  function done(err, user) {
-    if(err) {
-      res.json(err);
-    }
-    if (user){
-      req.session.user = user;
-      console.log(user);
-      res.render('index.pug', {
-        id: user._id,
-        username: user.username
-      });
-    }
-    else {
-      res.status(401).send('Uw inloggegevens kloppen niet! Probeer het opnieuw.');
-    }
-  }
-}
-
 // Render home page
 function home (req, res) {
   res.render('index.pug');
 }
-
-// Render profile if logged in
-function profile (req, res) {
-  if(!req.session.user) {
-    res.status(401).send('U moet ingelogd zijn om deze pagina te kunnen zien.');
-  }
-  else {
-    res.render('profile.pug');
-  }
-}
-
-// Log out, used source: https://www.youtube.com/watch?v=aT98NMdAXyk
-function logout(req, res) {
-  req.session.destroy(function(err){
-    if (err) {
-      res.negotiate(err);
-    }
-    else {
-      res.redirect('/');
-    }
-  });
-}
-// Source used ends here
-
-// Render club data
-function club(req, res, next) {
-  var id = req.params.id;
-
-  db.collection('clubs').findOne({
-    _id: mongo.ObjectID(id)
-  }, done);
-
-  function done(err, data) {
-    if (err) {
-      next(err);
-    } else {
-      res.render('myclub.pug', {data: data});
-    }
-  }
-}
-
-// Add input to database, used source: https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/index.js
-function add(req, res, next) {
-  db.collection('clubs').insertOne({
-    club: req.body.club,
-    time: req.body.time,
-    description: req.body.description
-  }, done);
-
-  function done(err, data) {
-    if (err) {
-      next(err);
-    } else {
-      res.redirect('/' + data.insertedId);
-    }
-  }
-}
-
-// Delete a club
-function remove(req, res, next) {
-  var id = req.params.id;
-
-  db.collection('clubs').deleteOne({
-    _id: mongo.ObjectID(id)
-  }, done);
-
-  function done(err) {
-    if (err) {
-      next(err);
-    } else {
-      res.json({status: 'ok'});
-    }
-  }
-} // Used source ends here
 
 // Ignore favicon, Source: https://stackoverflow.com/questions/35408729/express-js-prevent-get-favicon-ico
 function ignoreFavicon(req, res, next) {
