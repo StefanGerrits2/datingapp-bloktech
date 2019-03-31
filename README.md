@@ -69,6 +69,26 @@ Password: `Stefan`
 2. Username: `Denise`
 Password: `Denise`
 
+## Database
+
+### All collections
+
+![](https://imgshare.io/images/2019/03/31/Mongo139a01dc91292ce8f.jpg)
+
+There are 2 collections in the database: clubs and profiles. 
+* The club you add to your profile will be saved in the `clubs` collection.
+* There are 2 pre-made profiles in the `profiles` collection. You can use these to login.
+
+### The profiles collection
+![](https://imgshare.io/images/2019/03/31/Mongo2.jpg)
+
+This is how the `profiles` collection looks like. As you can see each document has a unique id, together with a username and a password.
+
+### The clubs collection
+![](https://imgshare.io/images/2019/03/31/Mongo3.jpg)
+
+This is how the `clubs` collection looks like. As you can see each document has a unique id, together with the club name, time (the amount of years you are a member of this club) and a description (what you like about your club).
+
 ## License
 
 [MIT](https://github.com/StefanGerrits2/datingwebsite-bloktech/blob/master/LICENSE.txt) © Stefan Gerrits
