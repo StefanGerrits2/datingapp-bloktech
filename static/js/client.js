@@ -10,7 +10,6 @@ if (remove) {
 function onremove(e) {
   var node = e.target;
   var id = node.dataset.id;
-
   var res = new XMLHttpRequest();
 
   res.open('DELETE', '/' + id);
@@ -21,8 +20,9 @@ function onremove(e) {
     if (res.status !== 200) {
       throw new Error('Could not delete!');
     }
-
-    window.location = '/myclub';
+    else {
+      window.location = '/myclub';
+    }
   } 
 }
 
