@@ -36,7 +36,7 @@ app
     resave: false,
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET
-  }))
+  })) 
   .get('/', login)
   .get('/home', home) // Home page
   .get('/profile', profile) // Profile page

@@ -1,30 +1,28 @@
 console.log('Hello world!');
 
 /* Source used: https://github.com/cmda-bt/be-course-18-19/blob/master/examples/mongodb-server/static/index.js */
-var remove = document.getElementById('js-remove');
+var remove = document.getElementById('remove');
 
 if (remove) {
   remove.addEventListener('click', onremove);
 }
 
-function onremove(ev) {
-  var node = ev.target;
+function onremove(e) {
+  var node = e.target;
   var id = node.dataset.id;
 
-  fetch('/' + id, {method: 'delete'})
-    .then(onresponse)
-    .then(onload, onfail);
+  var res = new XMLHttpRequest();
 
-  function onresponse(res) {
-    return res.json();
-  }
+  res.open('DELETE', '/' + id);
+  res.onload = onload;
+  res.send();
 
   function onload() {
-    window.location = '/myclub';
-  }
+    if (res.status !== 200) {
+      throw new Error('Could not delete!');
+    }
 
-  function onfail() {
-    throw Error('Could not delete!');
-  }
+    window.location = '/myclub';
+  } 
 }
 
