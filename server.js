@@ -6,6 +6,8 @@ const app = express();
 var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var session = require('express-session');
+var favicon = require('serve-favicon');
+var path = require('path');
 
 require('dotenv').config();
 
@@ -29,14 +31,14 @@ const remove = require('./controllers/remove.js');
 // Routes
 app
   .set('view engine', 'pug') // Middleware at the top so it knows which template will be used
-  .use(ignoreFavicon) // Source: https://stackoverflow.com/questions/35408729/express-js-prevent-get-favicon-ico
   .use(bodyParser.urlencoded({extended: true}))
   .use('/static', express.static('static'))
   .use(session({
     resave: false,
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET
-  })) 
+  }))
+  .use(favicon(path.join(__dirname, 'static', 'images', 'favicon.png')))
   .get('/', login)
   .get('/home', home) // Home page
   .get('/profile', profile) // Profile page
@@ -80,15 +82,6 @@ function login (req, res) {
 // Render home page
 function home (req, res) {
   res.render('index.pug');
-}
-
-// Ignore favicon, Source: https://stackoverflow.com/questions/35408729/express-js-prevent-get-favicon-ico
-function ignoreFavicon(req, res, next) {
-  if (req.originalUrl === '/favicon.ico') {
-    res.status(204).json({nope: true});
-  } else {
-    next();
-  }
 }
 
 // 404 error

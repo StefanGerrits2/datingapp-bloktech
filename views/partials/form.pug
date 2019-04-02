@@ -1,26 +1,29 @@
 h1 Voeg een club toe
 form(action='/' method='post')
-    label
-      | Kies een club 
-      br
-      select(name='club')
-        option TTV Stedebroec
-        option Heemskerk
-        option Tebunus
-        option Olympia
-        option Backhands
-        option De Victors
-        option Disnierats
-        option TTV De Roemer
-      br
-    label
-      | Hoelang ben je al lid? (in jaren)
-      br
-      input(type='number' name='time' placeholder='') 
-      br
-    label
-      | Wat vind je zo leuk bij deze club? 
-      br
-      textarea#description(name='description' rows='10')
-      br
-    button#toevoegen Toevoegen aan profiel
+    fieldset.form1
+      label
+        | Kies een club 
+        br
+        select(name='club')
+          option TTV Stedebroec
+          option Heemskerk
+          option Tebunus
+          option Olympia
+          option Backhands
+          option De Victors
+          option Disnierats
+          option TTV De Roemer
+        br
+    fieldset.form2   
+      label
+        | Hoelang ben je al lid? (in jaren)
+        br
+        input(type='number' name='time' placeholder='') 
+        br
+    fieldset.form3
+      label
+        | Wat vind je zo leuk bij deze club? 
+        br
+        textarea#description(name='description' rows='10')
+        br
+      button#toevoegen Toevoegen aan profiel
