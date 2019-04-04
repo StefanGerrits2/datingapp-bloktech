@@ -240,6 +240,12 @@ footer p {
   padding-bottom: 1em;
 }
 
+/*Enhancements*/
+
+.js-enabled {
+  color: red;
+}
+
 /* Mediaqueries */
 @media(min-width:600px) {
   main {

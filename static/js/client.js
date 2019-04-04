@@ -26,6 +26,12 @@ function onremove(e) {
   } 
 }
 
+//if javascript is enabled:
+var enhance = getElementById('enhance');
+	
+enhance.classList.toggle('js-enabled');
+     	
+
 
 
 
