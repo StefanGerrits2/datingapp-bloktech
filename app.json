@@ -1,6 +1,0 @@
-{
-    "name": "blok-tech",
-    "description": "A datingwebsite for ping pong players",
-    "repository": "https://github.com/StefanGerrits2/datingwebsite-bloktech",
-    "keywords": ["node", "express"]
-}
