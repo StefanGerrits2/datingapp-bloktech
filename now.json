@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [ 
         { 
-            "src": "./server.js", 
+            "src": "./views/login.pug", 
             "use": "@now/node-server" 
             } 
         ]   
