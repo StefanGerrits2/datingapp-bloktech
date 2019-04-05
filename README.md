@@ -29,7 +29,7 @@ Run this command in your terminal:
 git clone https://github.com/StefanGerrits2/datingwebsite-bloktech
 ```
 
-#### 2. Navigate into the route of the folder
+#### 2. Navigate into the root of the folder
 Run this command in your terminal:
 
 ```
