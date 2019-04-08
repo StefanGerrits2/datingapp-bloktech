@@ -1,5 +1,5 @@
 h1 Voeg een club toe
-form#enhance(action='/' method='post')
+form(action='/' method='post')
     fieldset.form1
       label
         | Kies een club 
@@ -14,16 +14,18 @@ form#enhance(action='/' method='post')
           option Disnierats
           option TTV De Roemer
         br
-    fieldset.form2   
+        a.button1(href = "") Volgende
+    fieldset.form2  
       label
         | Hoelang ben je al lid? (in jaren)
         br
         input(type='number' name='time' placeholder='') 
         br
+        a.button2(href = "") Volgende
     fieldset.form3
       label
         | Wat vind je zo leuk bij deze club? 
         br
         textarea#description(name='description' rows='10')
         br
-      button#toevoegen Toevoegen aan profiel
+        button#toevoegen Toevoegen aan profiel

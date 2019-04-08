@@ -241,10 +241,47 @@ footer p {
 }
 
 /*Enhancements*/
-
-.js-enabled {
-  color: red;
+fieldset {
+  border: none;
+  background-color: black;
+  margin-top: 2em;
 }
+.no-js fieldset {
+  background-color: #222430;
+  margin-top: 0;
+}
+
+.no-js .form1, .no-js .form2, .no-js .form3  {
+  display: grid;
+}
+
+.no-js .button1, .no-js .button2  {
+  display: none;
+}
+
+.form2 {
+  display: none;
+}
+
+.form3 {
+  display: none;
+}
+
+/* Toggle classes*/
+/*show*/
+.form2.show, .form3.show {
+  display: grid;
+}
+
+/*hide*/
+.form1.hide, .form2.hide {
+  display: none;
+}
+
+
+
+
+
 
 /* Mediaqueries */
 @media(min-width:600px) {
