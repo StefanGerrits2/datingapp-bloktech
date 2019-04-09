@@ -153,6 +153,11 @@ input, textarea {
   width: 5em;
 }
 
+#wrongCredentials {
+  color: red;
+  font-weight: 400;
+}
+
 /* Profile page */
 
 #information {
@@ -243,9 +248,11 @@ footer p {
 /*Enhancements*/
 fieldset {
   border: none;
-  background-color: black;
   margin-top: 2em;
+  width: 80%;
+  margin-left: -0.5em;
 }
+
 .no-js fieldset {
   background-color: #222430;
   margin-top: 0;
@@ -269,19 +276,14 @@ fieldset {
 
 /* Toggle classes*/
 /*show*/
-.form2.show, .form3.show {
+.form1.show, .form2.show, .form3.show {
   display: grid;
 }
 
 /*hide*/
-.form1.hide, .form2.hide {
+.form1.hide, .form2.hide, .form3.hide {
   display: none;
 }
-
-
-
-
-
 
 /* Mediaqueries */
 @media(min-width:600px) {

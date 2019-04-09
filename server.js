@@ -36,6 +36,7 @@ const logout = require('./controllers/logout.js');
 const club = require('./controllers/club.js');
 const add = require('./controllers/add.js');
 const remove = require('./controllers/remove.js');
+const wrongCredentials = require('./controllers/wrongCredentials.js');
 
 // Routes
 app
@@ -58,6 +59,7 @@ app
   .get('/logout', logout) // Log out
   .get('/add', form) // Add a club form
   .get('/:id', club) // Renders data at new page
+  .get('/wrongCredentials', wrongCredentials) // Show you need to be logged in
   .post('/home', checkLogin) // Login, or not
   .post('/', add) 
   .delete('/:id', remove);

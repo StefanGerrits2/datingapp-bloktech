@@ -32,7 +32,7 @@ function checkLogin(req, res) {
     if(err) {
       res.json(err);
     }
-    if (user){
+    else if (user){
       req.session.user = user;
       console.log(user);
       res.render('index.pug', {
@@ -41,7 +41,7 @@ function checkLogin(req, res) {
       });
     }
     else {
-      res.status(401).send('Uw inloggegevens kloppen niet! Probeer het opnieuw.');
+      res.render('wrongCredentials.pug');
     }
   }
 }
