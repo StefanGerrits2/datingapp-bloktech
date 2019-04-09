@@ -254,28 +254,26 @@ fieldset {
 }
 
 /* Steps bar */
-#step1, #step2, #step3 {
+.js-enabled #step1, .js-enabled #step2, .js-enabled #step3 {
   background-color: white;
   padding: 0.5em 2em;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.5s;
 }
 
-#step1, #step2 {
+.js-enabled #step1:hover, .js-enabled #step2:hover, .js-enabled #step3:hover {
+  -webkit-transform: rotateZ(+10deg);
+  -ms-transform: rotateZ(+10deg);
+  transform: rotateZ(+10deg);
+}
+
+.js-enabled #step1, .js-enabled #step2 {
   border-right: 2px solid black;
 }
 
-#steps {
+.js-enabled #steps {
   margin-bottom: -2em;
   font-weight: 400;
-}
-
-#step1.active , #step2.active, #step3.active {
-  background-color: green;
-  color: white;
-}
-
-#step1.inactive, #step2.inactive, #step3.inactive {
-  background-color: white;
-  color: black;
 }
 
 /*Enhancements*/
@@ -288,7 +286,7 @@ fieldset {
   display: none;
 }
 
-/* When javascript is enabled*/
+/* When javascript is enabled */
 .js-enabled .form2, .js-enabled .form3 {
   display: none;
 }
@@ -313,16 +311,28 @@ fieldset {
   margin-bottom: 3em;
 }
 
-/* Toggle classes*/
-/*show*/
+/* Toggle classes  */
+/* Show */
 .form1.show, .form2.show, .form3.show {
   display: grid;
   transition: 2s ease;
 }
 
-/*hide*/
+/* Hide*/
 .form1.hide, .form2.hide, .form3.hide {
   display: none;
+}
+
+/* Active */
+#step1.active , #step2.active, #step3.active {
+  background-color: #4b5fa0;
+  color: white;
+}
+
+/* Inactive */
+#step1.inactive, #step2.inactive, #step3.inactive {
+  background-color: white;
+  color: black;
 }
 
 /* Mediaqueries */

@@ -58,22 +58,28 @@ function showform2(){
   event.preventDefault();
   form1.classList.replace('show', 'hide');
   form2.classList.replace('hide', 'show');
+  form3.classList.replace('show', 'hide');
   step1.classList.replace('active', 'inactive');
   step2.classList.replace('inactive', 'active');
+  step3.classList.replace('active', 'inactive');
 }
 
 volgende1.addEventListener('click', showform2, false);
+step2.addEventListener('click', showform2, false);
 
 // Show form 3
 function showform3(){
   event.preventDefault();
+  form1.classList.replace('show', 'hide');
   form2.classList.replace('show', 'hide');
   form3.classList.replace('hide', 'show');
+  step1.classList.replace('active', 'inactive');
   step2.classList.replace('active', 'inactive');
   step3.classList.replace('inactive', 'active');
 }
 
 volgende2.addEventListener('click', showform3, false);
+step3.addEventListener('click', showform3, false);
 
 
 // Vorige
@@ -83,21 +89,27 @@ var vorige2 = document.querySelector('.vorige2');
 // Show form 1
 function previousform1(){
   event.preventDefault();
-  form2.classList.replace('show', 'hide');
   form1.classList.replace('hide', 'show');
+  form2.classList.replace('show', 'hide');
+  form3.classList.replace('show', 'hide');
   step1.classList.replace('inactive', 'active');
   step2.classList.replace('active', 'inactive');
+  step3.classList.replace('active', 'inactive');
 }
 
 vorige1.addEventListener('click', previousform1, false);
+step1.addEventListener('click', previousform1, false);
 
 // Show form 2
 function previousform2(){
   event.preventDefault();
-  form3.classList.replace('show', 'hide');
+  form1.classList.replace('show', 'hide');
   form2.classList.replace('hide', 'show');
+  form3.classList.replace('show', 'hide');
+  step1.classList.replace('active', 'inactive');
   step2.classList.replace('inactive', 'active');
   step3.classList.replace('active', 'inactive');
 }
 
 vorige2.addEventListener('click', previousform2, false);
+step2.addEventListener('click', previousform2, false);
