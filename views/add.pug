@@ -2,11 +2,13 @@ include partials/head.pug
 
 title Profiel
 
-body.no-js
+body
     include partials/nav.pug
     main
       h1 Profiel
       include partials/form.pug
 
-    include partials/footer.pug
+    footer#footer
+      p Ping Pong Partners - 2019
+      p Copyright (c) Stefan Gerrits
     script(src='../static/js/client.js')

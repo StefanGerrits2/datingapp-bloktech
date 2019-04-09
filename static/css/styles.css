@@ -67,13 +67,15 @@ li {
 nav ul {
   display: flex;
 }
+a {
+  text-decoration: none;
+}
 
 li a {
   display: block;
   color: #222430;
   text-align: center;
   padding: 1em 0.8em;
-  text-decoration: none;
   font-size: 1em;
 }
 
@@ -138,6 +140,7 @@ select {
 
 select, input, textarea {
   margin-bottom: 2em;
+  margin-top: 1em;
   -webkit-box-shadow: 5px 15px 17px -2px rgba(0,0,0,1);
   -moz-box-shadow: 5px 15px 17px -2px rgba(0,0,0,1);
   box-shadow: 5px 10px 20px -2px rgba(0,0,0,1);
@@ -245,39 +248,76 @@ footer p {
   padding-bottom: 1em;
 }
 
-/*Enhancements*/
 fieldset {
   border: none;
-  margin-top: 2em;
-  width: 80%;
   margin-left: -0.5em;
 }
 
-.no-js fieldset {
-  background-color: #222430;
-  margin-top: 0;
+/* Steps bar */
+#step1, #step2, #step3 {
+  background-color: white;
+  padding: 0.5em 2em;
 }
 
-.no-js .form1, .no-js .form2, .no-js .form3  {
+#step1, #step2 {
+  border-right: 2px solid black;
+}
+
+#steps {
+  margin-bottom: -2em;
+  font-weight: 400;
+}
+
+#step1.active , #step2.active, #step3.active {
+  background-color: green;
+  color: white;
+}
+
+#step1.inactive, #step2.inactive, #step3.inactive {
+  background-color: white;
+  color: black;
+}
+
+/*Enhancements*/
+/* When javascipt is disabled*/
+.volgende1, .volgende2, .vorige1, .vorige2 {
+  display: none;
+}
+
+#steps {
+  display: none;
+}
+
+/* When javascript is enabled*/
+.js-enabled .form2, .js-enabled .form3 {
+  display: none;
+}
+
+.js-enabled .volgende1, .js-enabled .volgende2, .js-enabled .vorige1, .js-enabled .vorige2 {
   display: grid;
+  width: 4em;
+  text-align: center;
+  margin-top: 1em;
 }
 
-.no-js .button1, .no-js .button2  {
-  display: none;
+.js-enabled .buttons {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 20%;
 }
 
-.form2 {
-  display: none;
-}
-
-.form3 {
-  display: none;
+.js-enabled #steps {
+ display: flex;
+  width: 100%;
+  grid-gap: 5%;
+  margin-bottom: 3em;
 }
 
 /* Toggle classes*/
 /*show*/
 .form1.show, .form2.show, .form3.show {
   display: grid;
+  transition: 2s ease;
 }
 
 /*hide*/

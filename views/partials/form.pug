@@ -1,8 +1,12 @@
-h1 Voeg een club toe
+h2 Voeg een club toe
 form(action='/' method='post')
+    div#steps
+      a#step1(href = "") Stap 1
+      a#step2(href = "") Stap 2
+      a#step3(href = "") Stap 3
     fieldset.form1
       label
-        | Kies een club 
+        | Selecteer jouw club 
         br
         select(name='club')
           option TTV Stedebroec
@@ -21,8 +25,9 @@ form(action='/' method='post')
         br
         input(type='number' name='time' placeholder='') 
         br
-        a.vorige1.button(href = "") Vorige
-        a.volgende2.button(href = "") Volgende
+        div.buttons
+          a.vorige1.button(href = "") Vorige
+          a.volgende2.button(href = "") Volgende
     fieldset.form3
       label
         | Wat vind je zo leuk bij deze club? 
