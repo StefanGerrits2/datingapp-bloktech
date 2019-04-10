@@ -37,6 +37,8 @@ const club = require('./controllers/club.js');
 const add = require('./controllers/add.js');
 const remove = require('./controllers/remove.js');
 const wrongCredentials = require('./controllers/wrongCredentials.js');
+const home = require('./controllers/home.js');
+const login = require('./controllers/login.js');
 
 // Routes
 app
@@ -83,16 +85,6 @@ function form(req, res) {
 
 function myclub(req, res, data) {
   res.render('myclub.pug', {data: data});
-}
-
-// Render login page
-function login (req, res) {
-  res.render('login.pug');
-}
-
-// Render home page
-function home (req, res) {
-  res.render('index.pug');
 }
 
 // 404 error

@@ -18,6 +18,7 @@ form(action='/' method='post')
           option Disnierats
           option TTV De Roemer
         br
+      div.buttons 
         a.volgende1.button(href = "") Volgende
     fieldset.form2  
       label
@@ -25,14 +26,15 @@ form(action='/' method='post')
         br
         input(type='number' name='time' placeholder='') 
         br
-        div.buttons
-          a.vorige1.button(href = "") Vorige
-          a.volgende2.button(href = "") Volgende
+      div.buttons
+        a.vorige1.button(href = "") Vorige
+        a.volgende2.button(href = "") Volgende
     fieldset.form3
       label
         | Wat vind je zo leuk bij deze club? 
         br
         textarea#description(name='description' rows='10')
         br
-        a.vorige2.button(href = "") Vorige
-        button#toevoegen Toevoegen aan profiel
+      a.vorige2.button(href = "") Vorige
+      button#toevoegen Toevoegen aan profiel
+        

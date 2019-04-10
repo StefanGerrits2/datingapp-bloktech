@@ -32,7 +32,7 @@ function checkLogin(req, res) {
     if(err) {
       res.json(err);
     }
-    else if (user){
+    if (user){
       req.session.user = user;
       console.log(user);
       res.render('index.pug', {
