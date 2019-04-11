@@ -27,31 +27,34 @@ function onremove(e) {
 }
 
 // Frontend Enhancement
+var body = document.querySelector('body'); 
+body.classList.toggle('js-enabled'); // If Javascript is enabled, add class js-enabled on body
+
+// Forms
 var form1 = document.querySelector('.form1');
 var form2 = document.querySelector('.form2');
 var form3 = document.querySelector('.form3');
 
+// Step menu
 var step1 = document.querySelector('#step1');
 var step2 = document.querySelector('#step2');
 var step3 = document.querySelector('#step3');
 
-// Volgende
-var body = document.querySelector('body');
-body.classList.toggle('js-enabled');
-
-var volgende1 = document.querySelector('.volgende1');
-var volgende2 = document.querySelector('.volgende2');
-
-// Volgende
-form1.classList.toggle('show');
-form2.classList.toggle('hide');
-form3.classList.toggle('hide');
-
-// Active step
-
+// Setting active step
 step1.classList.toggle('active');
 step2.classList.toggle('inactive');
 step3.classList.toggle('inactive');
+
+// Show forms 'next'
+
+// Next buttons
+var next1 = document.querySelector('.volgende1');
+var next2 = document.querySelector('.volgende2');
+
+// Setting active form
+form1.classList.toggle('show');
+form2.classList.toggle('hide');
+form3.classList.toggle('hide');
 
 // Show form 2
 function showform2(){
@@ -64,7 +67,7 @@ function showform2(){
   step3.classList.replace('active', 'inactive');
 }
 
-volgende1.addEventListener('click', showform2, false);
+next1.addEventListener('click', showform2, false);
 step2.addEventListener('click', showform2, false);
 
 // Show form 3
@@ -78,13 +81,14 @@ function showform3(){
   step3.classList.replace('inactive', 'active');
 }
 
-volgende2.addEventListener('click', showform3, false);
+next2.addEventListener('click', showform3, false);
 step3.addEventListener('click', showform3, false);
 
+// Show forms 'previous'
 
-// Vorige
-var vorige1 = document.querySelector('.vorige1');
-var vorige2 = document.querySelector('.vorige2');
+// Previous buttons
+var previous1 = document.querySelector('.vorige1');
+var previous2 = document.querySelector('.vorige2');
 
 // Show form 1
 function previousform1(){
@@ -97,7 +101,7 @@ function previousform1(){
   step3.classList.replace('active', 'inactive');
 }
 
-vorige1.addEventListener('click', previousform1, false);
+previous1.addEventListener('click', previousform1, false);
 step1.addEventListener('click', previousform1, false);
 
 // Show form 2
@@ -111,5 +115,5 @@ function previousform2(){
   step3.classList.replace('active', 'inactive');
 }
 
-vorige2.addEventListener('click', previousform2, false);
+previous2.addEventListener('click', previousform2, false);
 step2.addEventListener('click', previousform2, false);
