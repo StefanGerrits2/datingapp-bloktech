@@ -1,14 +1,8 @@
 var mongo = require('mongodb');
 
-// Database information
-// Database information
-let db = {
-  password: process.env.DB_PASSWORD,
-  username: process.env.DB_USERNAME,
-  cluster: process.env.DB_CLUSTER,
-  host: process.env.DB_HOST,
-  name: process.env.DB_NAME,
-};
+// Setup database
+let db = require('../models/db.js');
+
 const url = `mongodb+srv://${db.username}:${db.password}@${db.cluster}-${db.host}/${db.name}`;
 
 mongo.MongoClient.connect(url, {useNewUrlParser: true}, function (err, client) {
