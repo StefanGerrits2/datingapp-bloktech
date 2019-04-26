@@ -73,19 +73,19 @@ Password: `Denise`
 
 ### All collections
 
-![](https://imgshare.io/images/2019/03/31/Mongo139a01dc91292ce8f.jpg)
+![](http://i67.tinypic.com/51dend.jpg)
 
 There are 2 collections in the database: clubs and profiles. 
 * The club you add to your profile will be saved in the `clubs` collection.
 * There are 2 pre-made profiles in the `profiles` collection. You can use these to login.
 
 ### The profiles collection
-![](https://imgshare.io/images/2019/03/31/Mongo2.jpg)
+![](http://i68.tinypic.com/rcq5hk.jpg)
 
 This is how the `profiles` collection looks like. As you can see each document has a unique id, together with a username and a password.
 
 ### The clubs collection
-![](https://imgshare.io/images/2019/03/31/Mongo3.jpg)
+![](http://i65.tinypic.com/2uz78d2.jpg)
 
 This is how the `clubs` collection looks like. As you can see each document has a unique id, together with the club name, time (the amount of years you are a member of this club) and a description (what you like about your club).
 
